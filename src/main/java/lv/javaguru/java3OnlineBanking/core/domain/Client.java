@@ -1,4 +1,4 @@
-package lv.javaguru.java3.OnlineBanking.core.domain;
+package lv.javaguru.java3OnlineBanking.core.domain;
 
 
 import javax.persistence.*;

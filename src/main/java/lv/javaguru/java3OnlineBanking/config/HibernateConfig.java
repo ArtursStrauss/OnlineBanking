@@ -1,4 +1,4 @@
-package lv.javaguru.java3.OnlineBanking.config;
+package lv.javaguru.java3OnlineBanking.config;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.persistence.EntityManagerFactory;
 
 @Configuration
-@EntityScan(basePackages = "lv.javaguru.java3.OnlineBanking.core.domain")
+@EntityScan(basePackages = "lv.javaguru.java3OnlineBanking.core.domain")
 public class HibernateConfig {
 
     @Autowired
