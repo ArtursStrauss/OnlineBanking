@@ -23,7 +23,21 @@
             <column name="full_name" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
+
+            <column name="created_at" type="timestamp" defaultValue="NOW()">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="updated_at" type="timestamp" defaultValue="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+
         </createTable>
+
+        <modifySql dbms="mysql">
+            <regExpReplace replace="'CURRENT_TIMESTAMP'" with="CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"/>
+            <append value=" engine innodb" />
+        </modifySql>
     </changeSet>
 
 </databaseChangeLog>
