@@ -11,10 +11,13 @@ public class Client extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+
     @Column(name = "login", nullable = false)
     private String login;
+
     @Column(name = "password", nullable = false)
     private String password;
+
     @Column(name = "full_name", nullable = false)
     private String fullName;
 
