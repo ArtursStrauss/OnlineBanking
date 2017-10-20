@@ -21,6 +21,7 @@ public class ClientServiceImpl implements ClientService {
         client.setLogin(newLogin);
         client.setPassword(newPassword);
         client.setFullName(newFullName);
+        clientDAO.update(client);
         return client;
     }
 
