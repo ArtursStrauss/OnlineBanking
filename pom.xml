@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>lv.javaguru</groupId>
-    <artifactId>java3.OnlineBanking</artifactId>
+    <artifactId>java3OnlineBanking</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>war</packaging>
@@ -116,7 +116,7 @@
 
 
     <build>
-        <finalName>java3.OnlineBanking</finalName>
+        <finalName>java3OnlineBanking</finalName>
 
         <plugins>
             <plugin>
