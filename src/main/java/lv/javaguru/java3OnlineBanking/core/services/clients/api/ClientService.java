@@ -9,5 +9,7 @@ public interface ClientService {
                   String newPassword,
                   String newFullName);
 
+    void delete(Long clientId);
+
     Client get(Long clientId);
 }

@@ -26,6 +26,12 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public void delete(Long clientId) {
+        Client client = get(clientId);
+        clientDAO.delete(client);
+    }
+
+    @Override
     public Client get(Long clientId) {
         return clientDAO.getRequired(clientId);
     }

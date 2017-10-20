@@ -1,6 +1,6 @@
 package lv.javaguru.java3OnlineBanking.core.commands.clients;
 
-import lv.javaguru.java3OnlineBanking.core.commands.clients.api.DomainCommand;
+import lv.javaguru.java3OnlineBanking.core.commands.api.DomainCommand;
 
 public class CreateClientCommand implements DomainCommand<CreateClientResult> {
 
