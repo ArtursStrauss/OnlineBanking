@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>RELEASE</version>
+        <version>1.5.7.RELEASE</version>
     </parent>
 
     <repositories>
@@ -46,8 +46,6 @@
     </pluginRepositories>
 
     <properties>
-        <commons-lang.version>2.6</commons-lang.version>
-
         <!-- HSQLDB dependency - used as embedded database -->
         <hsqldb.version>2.4.0</hsqldb.version>
 
@@ -60,38 +58,15 @@
         <guava.version>23.0</guava.version>
 
         <!-- Spring Boot -->
-        <spring-boot-starter-jersey.version>1.5.6.RELEASE</spring-boot-starter-jersey.version>
-        <spring-boot-starter-data-jpa.version>1.5.6.RELEASE</spring-boot-starter-data-jpa.version>
-
-
-        <spring-boot-starter-test.version>1.5.6.RELEASE</spring-boot-starter-test.version>
-
-        <jackson-core.version>2.9.1</jackson-core.version>
-        <jackson-databind.version>2.9.1</jackson-databind.version>
-        <jackson-annotations.version>2.9.1</jackson-annotations.version>
+        <spring-boot-starter-web.version>1.5.7.RELEASE</spring-boot-starter-web.version>
+        <spring-boot-starter-data-jpa.version>1.5.7.RELEASE</spring-boot-starter-data-jpa.version>
 
         <!-- Testing lib dependencies -->
-        <junit.version>4.12</junit.version>
-        <mockito-all.version>1.10.19</mockito-all.version>
-        <feign-core.version>8.18.0</feign-core.version>
-        <feign-jaxrs.version>8.18.0</feign-jaxrs.version>
-        <feign-jackson.version>8.18.0</feign-jackson.version>
+        <spring-boot-starter-test.version>1.5.7.RELEASE</spring-boot-starter-test.version>
 
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>${commons-lang.version}</version>
-        </dependency>
-
-        <!-- HSQLDB dependency - used as embedded database -->
-        <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>${hsqldb.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>mysql</groupId>
@@ -105,7 +80,6 @@
             <artifactId>liquibase-core</artifactId>
             <version>${liquibase-core.version}</version>
         </dependency>
-
 
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -121,61 +95,15 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jersey</artifactId>
-            <version>${spring-boot-starter-jersey.version}</version>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot-starter-web.version}</version>
         </dependency>
 
+        <!-- HSQLDB dependency - used as embedded database -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson-core.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson-databind.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>${jackson-annotations.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.netflix.feign</groupId>
-            <artifactId>feign-core</artifactId>
-            <version>${feign-core.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.netflix.feign</groupId>
-            <artifactId>feign-jackson</artifactId>
-            <version>${feign-jackson.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.netflix.feign</groupId>
-            <artifactId>feign-jaxrs</artifactId>
-            <version>${feign-jaxrs.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>${mockito-all.version}</version>
-            <scope>test</scope>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>${hsqldb.version}</version>
         </dependency>
 
         <dependency>
@@ -185,6 +113,7 @@
         </dependency>
 
     </dependencies>
+
 
     <build>
         <finalName>java3.OnlineBanking</finalName>
