@@ -1,12 +1,23 @@
 package lv.javaguru.java3OnlineBanking.core.integrations.rest.dto;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 public class ClientDTO implements Serializable {
 
+    @NotNull
     private Long id;
+
+    @NotNull
     private String login;
+
+    @NotNull
     private String password;
+
+    @NotNull
     private String fullName;
 
     public Long getId() {

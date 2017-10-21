@@ -2,6 +2,7 @@ package lv.javaguru.java3OnlineBanking.core.services.clients.impl;
 
 import lv.javaguru.java3OnlineBanking.core.database.api.ClientDAO;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
+import lv.javaguru.java3OnlineBanking.core.exceptions.ResourceNotFoundException;
 import lv.javaguru.java3OnlineBanking.core.services.clients.api.ClientService;
 import lv.javaguru.java3OnlineBanking.core.services.clients.api.ClientValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,11 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client get(Long clientId) {
-        return clientDAO.getRequired(clientId);
+        Client client = clientDAO.getRequired(clientId);
+
+        if (client == null) {
+            throw new ResourceNotFoundException(clientId, "user not found");
+        }
+        return client;
     }
 }

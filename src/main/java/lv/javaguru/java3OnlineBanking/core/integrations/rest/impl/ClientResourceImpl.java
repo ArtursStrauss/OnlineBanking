@@ -25,6 +25,7 @@ public class ClientResourceImpl {
                 clientDTO.getPassword(),
                 clientDTO.getFullName()
         );
+        System.out.println(clientDTO.getPassword());
         CreateClientResult result = commandExecutor.execute(command);
         return ResponseEntity.ok(result.getClient());
     }

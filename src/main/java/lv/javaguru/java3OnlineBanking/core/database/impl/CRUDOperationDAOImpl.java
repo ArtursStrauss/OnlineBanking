@@ -37,9 +37,9 @@ abstract class CRUDOperationDAOImpl<E, K extends Serializable> implements CRUDOp
     @Override
     public E getRequired(K key) {
         E entity = (E) getCurrentSession().get(daoType, key);
-        if (entity == null) {
-            throw new IllegalArgumentException("Entity with id = " + key + " not exist!");
-        }
+       // if (entity == null) {
+            //throw new IllegalArgumentException("Entity with id = " + key + " not exist!");
+       // }
         return entity;
     }
 
