@@ -1,5 +1,7 @@
 package lv.javaguru.java3OnlineBanking.core.exceptions;
 
+import lv.javaguru.java3OnlineBanking.core.exceptions.api.ApiSubError;
+
 class ApiValidationError implements ApiSubError {
     private String object;
     private String field;
@@ -48,5 +50,15 @@ class ApiValidationError implements ApiSubError {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "ApiValidationError{" +
+                "object='" + object + '\'' +
+                ", field='" + field + '\'' +
+                ", rejectedValue=" + rejectedValue +
+                ", message='" + message + '\'' +
+                '}';
     }
 }

@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping(value = RESTResource.API_PATH)
 public class ClientResourceImpl {
@@ -19,13 +21,14 @@ public class ClientResourceImpl {
     private CommandExecutor commandExecutor;
 
     @RequestMapping(value = "/clients", method = RequestMethod.POST)
-    public ResponseEntity<ClientDTO> create(@RequestBody ClientDTO clientDTO) {
+    public ResponseEntity<ClientDTO> create(@Valid @RequestBody ClientDTO clientDTO) {
+
         CreateClientCommand command = new CreateClientCommand(
                 clientDTO.getLogin(),
                 clientDTO.getPassword(),
                 clientDTO.getFullName()
         );
-        System.out.println(clientDTO.getPassword());
+
         CreateClientResult result = commandExecutor.execute(command);
         return ResponseEntity.ok(result.getClient());
     }

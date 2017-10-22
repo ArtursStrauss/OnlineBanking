@@ -2,22 +2,23 @@ package lv.javaguru.java3OnlineBanking.core.integrations.rest.dto;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 public class ClientDTO implements Serializable {
 
-    @NotNull
     private Long id;
 
     @NotNull
+    @NotEmpty
     private String login;
 
     @NotNull
+    @NotEmpty
     private String password;
 
     @NotNull
+    @NotEmpty
     private String fullName;
 
     public Long getId() {
@@ -50,5 +51,15 @@ public class ClientDTO implements Serializable {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    @Override
+    public String toString() {
+        return "ClientDTO{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", fullName='" + fullName + '\'' +
+                '}';
     }
 }
