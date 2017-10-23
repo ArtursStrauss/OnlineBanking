@@ -6,8 +6,12 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <include file="liquibase/changelogs/db.changelog-1.0.xml"/>
-    <include file="liquibase/changelogs/db.changelog-2.0.xml"/>
-    <include file="liquibase/changelogs/db.changelog-2.1.xml"/>
+    <changeSet id="1" author="arturs" context="main">
+        <createIndex tableName="client_accounts"
+                     indexName="idx_client_accounts_account_number"
+                     unique="true">
+            <column name="account_number"/>
+        </createIndex>
+    </changeSet>
 
 </databaseChangeLog>
