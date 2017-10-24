@@ -30,16 +30,12 @@ public class ClientAccountFactoryImpl implements ClientAccountFactory {
         BigDecimal balance = new BigDecimal("0.0");
         Client client = clientService.get(clientId);
 
-        System.out.println(client);
-
         ClientAccount clientAccount = createClientAccount()
                 .withAccountNumber(accountNumber)
                 .withCurrency(currency)
                 .withBalance(balance)
                 .withClient(client)
                 .build();
-
-        System.out.println(clientAccount);
 
         clientAccountDAO.create(clientAccount);
         return clientAccount;
