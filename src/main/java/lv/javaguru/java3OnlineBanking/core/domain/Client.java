@@ -52,4 +52,14 @@ public class Client extends BaseEntity {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", fullName='" + fullName + '\'' +
+                '}';
+    }
 }

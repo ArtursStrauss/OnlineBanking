@@ -16,10 +16,6 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="password" type="varchar(50)">
-                <constraints nullable="false"/>
-            </column>
-
             <column name="currency" type="varchar(10)">
                 <constraints nullable="false"/>
             </column>

@@ -26,6 +26,7 @@ abstract class CRUDOperationDAOImpl<E, K extends Serializable> implements CRUDOp
 
     @Override
     public void create(E entity) {
+        // System.out.println(daoType);
         getCurrentSession().saveOrUpdate(entity);
     }
 

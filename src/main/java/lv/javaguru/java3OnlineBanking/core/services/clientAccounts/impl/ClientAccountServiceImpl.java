@@ -24,7 +24,7 @@ public class ClientAccountServiceImpl implements ClientAccountService {
         clientAccount.setAccountNumber(accountNumber);
         clientAccount.setCurrency(currency);
         clientAccount.setBalance(balance);
-        clientAccount.setClient(client);
+//        clientAccount.setClient(client);
 
         clientAccountDAO.update(clientAccount);
         return clientAccount;

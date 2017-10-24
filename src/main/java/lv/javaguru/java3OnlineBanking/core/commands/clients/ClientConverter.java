@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import static lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientDTOBuilder.createClientDTO;
 
 @Component
-class ClientConverter {
+public class ClientConverter {
 
     public ClientDTO convert(Client client) {
         return createClientDTO()

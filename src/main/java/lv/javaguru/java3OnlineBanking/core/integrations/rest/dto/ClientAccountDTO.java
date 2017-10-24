@@ -1,29 +1,15 @@
-package lv.javaguru.java3OnlineBanking.core.domain;
+package lv.javaguru.java3OnlineBanking.core.integrations.rest.dto;
 
-import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "client_accounts")
-public class ClientAccount extends BaseEntity {
+public class ClientAccountDTO implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
     private Long id;
-
-    @Column(name = "account_number", nullable = false)
     private String accountNumber;
-
-    @Column(name = "currency", nullable = false)
     private String currency;
-
-    @Column(name = "balance")
     private BigDecimal balance;
-
-    @OneToOne
-    @JoinColumn(name = "client_id", nullable = false, referencedColumnName = "id")
-    private Client client;
+    private Long clientId;
 
     public Long getId() {
         return id;
@@ -57,22 +43,22 @@ public class ClientAccount extends BaseEntity {
         this.balance = balance;
     }
 
-    public Client getClient() {
-        return client;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     @Override
     public String toString() {
-        return "ClientAccount{" +
+        return "ClientAccountDTO{" +
                 "id=" + id +
                 ", accountNumber='" + accountNumber + '\'' +
                 ", currency='" + currency + '\'' +
                 ", balance=" + balance +
-                ", client=" + client +
+                ", clientId=" + clientId +
                 '}';
     }
 }
