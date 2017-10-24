@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Component
 public class ClientAccountServiceImpl implements ClientAccountService {
@@ -24,7 +25,7 @@ public class ClientAccountServiceImpl implements ClientAccountService {
         clientAccount.setAccountNumber(accountNumber);
         clientAccount.setCurrency(currency);
         clientAccount.setBalance(balance);
-//        clientAccount.setClient(client);
+        clientAccount.setClient(client);
 
         clientAccountDAO.update(clientAccount);
         return clientAccount;
@@ -44,5 +45,9 @@ public class ClientAccountServiceImpl implements ClientAccountService {
             throw new ResourceNotFoundException(clientAccountId, "Client Account not found!");
         }
         return clientAccount;
+    }
+
+    public List<ClientAccount> getAllAccountsByClientId(Long clientId) {
+        return clientAccountDAO.getAllAccountsByClientId(clientId);
     }
 }

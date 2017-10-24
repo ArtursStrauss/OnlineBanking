@@ -2,9 +2,7 @@ package lv.javaguru.java3OnlineBanking.core.integrations.rest.impl;
 
 
 import lv.javaguru.java3OnlineBanking.core.commands.VoidResult;
-import lv.javaguru.java3OnlineBanking.core.commands.clientAccount.CreateClientAccountCommand;
-import lv.javaguru.java3OnlineBanking.core.commands.clientAccount.CreateClientAccountResult;
-import lv.javaguru.java3OnlineBanking.core.commands.clientAccount.DeleteClientAccountCommand;
+import lv.javaguru.java3OnlineBanking.core.commands.clientAccount.*;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.api.RESTResource;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientAccountDTO;
 import lv.javaguru.java3OnlineBanking.core.services.CommandExecutor;
@@ -12,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 
 @RestController
@@ -22,15 +23,24 @@ public class ClientAccountResourceImpl {
     private CommandExecutor commandExecutor;
 
     @RequestMapping(value = "/client/accounts", method = RequestMethod.POST)
-    public ResponseEntity<ClientAccountDTO> create(@RequestBody ClientAccountDTO clientAccountDTO) {
+    public ResponseEntity<ClientAccountDTO> create(@Valid @RequestBody ClientAccountDTO clientAccountDTO) {
 
         CreateClientAccountCommand command = new CreateClientAccountCommand(
                 clientAccountDTO.getCurrency(),
-                clientAccountDTO.getClientId()
+                clientAccountDTO.getClient()
         );
 
         CreateClientAccountResult result = commandExecutor.execute(command);
         return ResponseEntity.ok(result.getClientAccount());
+    }
+
+    @RequestMapping(value = "/client/{clientId}/accounts", method = RequestMethod.GET)
+    public ResponseEntity<List<ClientAccountDTO>> getAllClientAccounts(@PathVariable("clientId") Long clientId) {
+
+        GetClientAccountsByClientIdCommand command = new GetClientAccountsByClientIdCommand(clientId);
+
+        GetClientAccountsByClientIdResult result = commandExecutor.execute(command);
+        return ResponseEntity.ok(result.getClientAccountDTOs());
     }
 
     @RequestMapping(value = "/client/account/{clientAccountId}", method = RequestMethod.DELETE)

@@ -3,6 +3,7 @@ package lv.javaguru.java3OnlineBanking.core.services.clientAccounts.impl;
 import lv.javaguru.java3OnlineBanking.core.database.api.ClientAccountDAO;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
+import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientDTO;
 import lv.javaguru.java3OnlineBanking.core.services.clientAccounts.api.ClientAccountFactory;
 import lv.javaguru.java3OnlineBanking.core.services.clients.api.ClientService;
 import lv.javaguru.java3OnlineBanking.core.utils.GenerateAccount;
@@ -16,6 +17,8 @@ import java.math.BigDecimal;
 @Component
 public class ClientAccountFactoryImpl implements ClientAccountFactory {
 
+    private static final BigDecimal INITIAL_BALANCE = new BigDecimal("0.0");
+
     @Autowired
     private GenerateAccount generateAccount;
     @Autowired
@@ -24,21 +27,20 @@ public class ClientAccountFactoryImpl implements ClientAccountFactory {
     private ClientService clientService;
 
     @Override
-    public ClientAccount create(String currency, Long clientId) {
+    public ClientAccount create(String currency, ClientDTO clientDTO) {
 
         String accountNumber = generateAccount.generateAccount();
-        BigDecimal balance = new BigDecimal("0.0");
-        Client client = clientService.get(clientId);
+        Client client = clientService.get(clientDTO.getId());
 
         ClientAccount clientAccount = createClientAccount()
                 .withAccountNumber(accountNumber)
                 .withCurrency(currency)
-                .withBalance(balance)
+                .withBalance(INITIAL_BALANCE)
                 .withClient(client)
                 .build();
 
         clientAccountDAO.create(clientAccount);
-        System.out.println(clientAccount);
+
         return clientAccount;
     }
 }

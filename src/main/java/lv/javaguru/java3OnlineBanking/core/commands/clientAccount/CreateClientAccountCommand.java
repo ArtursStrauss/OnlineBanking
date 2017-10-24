@@ -7,19 +7,19 @@ import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientDTO;
 public class CreateClientAccountCommand implements DomainCommand<CreateClientAccountResult> {
 
     private String currency;
-    private Long clientId;
+    private ClientDTO client;
 
-    public CreateClientAccountCommand(String currency, Long clientId) {
+    public CreateClientAccountCommand(String currency, ClientDTO client) {
 
         this.currency = currency;
-        this.clientId = clientId;
+        this.client = client;
     }
 
     public String getCurrency() {
         return currency;
     }
 
-    public Long getClientId() {
-        return clientId;
+    public ClientDTO getClient(){
+        return client;
     }
 }

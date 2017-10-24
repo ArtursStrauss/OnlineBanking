@@ -1,5 +1,8 @@
 package lv.javaguru.java3OnlineBanking.core.integrations.rest.dto;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -7,9 +10,14 @@ public class ClientAccountDTO implements Serializable {
 
     private Long id;
     private String accountNumber;
+
+    @NotNull
+    @NotEmpty
     private String currency;
     private BigDecimal balance;
-    private Long clientId;
+
+    @NotNull
+    private ClientDTO client;
 
     public Long getId() {
         return id;
@@ -43,12 +51,12 @@ public class ClientAccountDTO implements Serializable {
         this.balance = balance;
     }
 
-    public Long getClientId() {
-        return clientId;
+    public void setClientDTO(ClientDTO client) {
+        this.client = client;
     }
 
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
+    public ClientDTO getClient() {
+        return client;
     }
 
     @Override
@@ -58,7 +66,6 @@ public class ClientAccountDTO implements Serializable {
                 ", accountNumber='" + accountNumber + '\'' +
                 ", currency='" + currency + '\'' +
                 ", balance=" + balance +
-                ", clientId=" + clientId +
                 '}';
     }
 }

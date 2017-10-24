@@ -19,7 +19,7 @@ public class CreateClientAccountCommandHandler implements DomainCommandHandler<C
     public CreateClientAccountResult execute(CreateClientAccountCommand command) {
         ClientAccount clientAccount = clientAccountFactory.create(
                 command.getCurrency(),
-                command.getClientId()
+                command.getClient()
         );
 
         ClientAccountDTO clientAccountDTO = clientAccountConverter.convert(clientAccount);

@@ -8,7 +8,7 @@ public class ClientAccountDTOBuilder {
     private String accountNumber;
     private String currency;
     private BigDecimal balance;
-    private Long clientId;
+    private ClientDTO clientDTO;
 
     private ClientAccountDTOBuilder() {
     }
@@ -23,7 +23,7 @@ public class ClientAccountDTOBuilder {
         clientAccountDTO.setAccountNumber(accountNumber);
         clientAccountDTO.setCurrency(currency);
         clientAccountDTO.setBalance(balance);
-        clientAccountDTO.setClientId(clientId);
+        clientAccountDTO.setClientDTO(clientDTO);
 
         return clientAccountDTO;
     }
@@ -48,8 +48,8 @@ public class ClientAccountDTOBuilder {
         return this;
     }
 
-    public ClientAccountDTOBuilder withClientId(Long clientId) {
-        this.clientId = clientId;
+    public ClientAccountDTOBuilder withClientDTO(ClientDTO clientDTO) {
+        this.clientDTO = clientDTO;
         return this;
     }
 }
