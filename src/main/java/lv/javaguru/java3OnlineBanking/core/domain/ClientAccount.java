@@ -18,10 +18,10 @@ public class ClientAccount extends BaseEntity {
     @Column(name = "currency", nullable = false)
     private String currency;
 
-    @Column(name = "balance")
+    @Column(name = "balance", columnDefinition = "decimal default 0.0")
     private BigDecimal balance;
 
-    @OneToOne
+    @OneToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "client_id", nullable = false, referencedColumnName = "id")
     private Client client;
 

@@ -17,7 +17,7 @@ public class ClientAccountConverter {
                 .withAccountNumber(clientAccount.getAccountNumber())
                 .withCurrency(clientAccount.getCurrency())
                 .withBalance(clientAccount.getBalance())
-                .withClientId(clientAccount.getId())
+                .withClientId(clientAccount.getClient().getId())
                 .build();
     }
 }

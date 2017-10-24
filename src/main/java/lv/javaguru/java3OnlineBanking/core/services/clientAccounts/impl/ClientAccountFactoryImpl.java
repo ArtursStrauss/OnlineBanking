@@ -38,6 +38,7 @@ public class ClientAccountFactoryImpl implements ClientAccountFactory {
                 .build();
 
         clientAccountDAO.create(clientAccount);
+        System.out.println(clientAccount);
         return clientAccount;
     }
 }
