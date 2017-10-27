@@ -1,4 +1,4 @@
-package lv.javaguru.java3OnlineBanking.core.commands.clientAccount;
+package lv.javaguru.java3OnlineBanking.core.commands.clientAccounts;
 
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientAccountDTO;

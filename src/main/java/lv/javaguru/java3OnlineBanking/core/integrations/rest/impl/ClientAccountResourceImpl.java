@@ -2,7 +2,7 @@ package lv.javaguru.java3OnlineBanking.core.integrations.rest.impl;
 
 
 import lv.javaguru.java3OnlineBanking.core.commands.VoidResult;
-import lv.javaguru.java3OnlineBanking.core.commands.clientAccount.*;
+import lv.javaguru.java3OnlineBanking.core.commands.clientAccounts.*;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.api.RESTResource;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientAccountDTO;
 import lv.javaguru.java3OnlineBanking.core.services.CommandExecutor;

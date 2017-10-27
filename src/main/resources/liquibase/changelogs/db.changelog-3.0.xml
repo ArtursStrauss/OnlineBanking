@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="arturs" context="main">
+        <createTable tableName="client_account_transactions">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="client_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="client_account_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="transaction_type" type="enum('DEPOSIT','WITHDRAW','TRANSFER','CORRECTION')">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="amount" type="decimal(15,2)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="currency" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="result_balance" type="decimal(15,2)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="status" type="enum('SUCCESSFUL','FAILED','IN_PROGRESS')">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created_at" type="timestamp" defaultValue="NOW()">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="updated_at" type="timestamp" defaultValue="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <modifySql dbms="mysql">
+            <regExpReplace replace="'CURRENT_TIMESTAMP'" with="CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"/>
+            <append value=" engine innodb"/>
+        </modifySql>
+    </changeSet>
+
+    <changeSet id="2" author="arturs" context="main">
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="client_account_transactions"
+                                 constraintName="fk_client_account_transactions_clients"
+                                 referencedColumnNames="id"
+                                 referencedTableName="clients"/>
+    </changeSet>
+
+    <changeSet id="3" author="arturs" context="main">
+        <addForeignKeyConstraint baseColumnNames="client_account_id"
+                                 baseTableName="client_account_transactions"
+                                 constraintName="fk_client_account_transactions_client_accounts"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client_accounts"/>
+    </changeSet>
+
+    <changeSet id="4" author="arturs" context="main">
+        <createIndex tableName="client_account_transactions"
+                     indexName="idx_client_account_transactions_client_id"
+                     unique="false">
+            <column name="client_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="5" author="arturs" context="main">
+        <createIndex tableName="client_account_transactions"
+                     indexName="idx_client_account_transactions_client_account_id"
+                     unique="false">
+            <column name="client_account_id"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>
