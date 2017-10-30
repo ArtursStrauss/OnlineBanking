@@ -1,4 +1,4 @@
-package lv.javaguru.java3OnlineBanking.core.commands.clientAccountTransactions;
+package lv.javaguru.java3OnlineBanking.core.commands.clientaccounttransactions;
 
 import lv.javaguru.java3OnlineBanking.core.commands.api.DomainCommandResult;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientAccountTransactionDTO;

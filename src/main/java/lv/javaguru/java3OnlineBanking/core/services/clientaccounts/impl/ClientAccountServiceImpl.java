@@ -1,10 +1,10 @@
-package lv.javaguru.java3OnlineBanking.core.services.clientAccounts.impl;
+package lv.javaguru.java3OnlineBanking.core.services.clientaccounts.impl;
 
 import lv.javaguru.java3OnlineBanking.core.database.api.ClientAccountDAO;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.core.exceptions.ResourceNotFoundException;
-import lv.javaguru.java3OnlineBanking.core.services.clientAccounts.api.ClientAccountService;
+import lv.javaguru.java3OnlineBanking.core.services.clientaccounts.api.ClientAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

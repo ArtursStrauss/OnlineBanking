@@ -1,4 +1,4 @@
-package lv.javaguru.java3OnlineBanking.core.services.ClientAccountTransactions.impl;
+package lv.javaguru.java3OnlineBanking.core.services.clientaccounttransactions.impl;
 
 import lv.javaguru.java3OnlineBanking.core.database.api.ClientAccountTransactionDAO;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
@@ -8,8 +8,8 @@ import lv.javaguru.java3OnlineBanking.core.domain.enums.TransactionStatus;
 import lv.javaguru.java3OnlineBanking.core.domain.enums.TransactionType;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientAccountDTO;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientDTO;
-import lv.javaguru.java3OnlineBanking.core.services.ClientAccountTransactions.api.ClientAccountTransactionFactory;
-import lv.javaguru.java3OnlineBanking.core.services.clientAccounts.api.ClientAccountService;
+import lv.javaguru.java3OnlineBanking.core.services.clientaccounttransactions.api.ClientAccountTransactionFactory;
+import lv.javaguru.java3OnlineBanking.core.services.clientaccounts.api.ClientAccountService;
 import lv.javaguru.java3OnlineBanking.core.services.clients.api.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

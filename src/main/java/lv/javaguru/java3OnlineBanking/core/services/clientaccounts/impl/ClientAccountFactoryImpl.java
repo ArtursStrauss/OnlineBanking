@@ -1,10 +1,10 @@
-package lv.javaguru.java3OnlineBanking.core.services.clientAccounts.impl;
+package lv.javaguru.java3OnlineBanking.core.services.clientaccounts.impl;
 
 import lv.javaguru.java3OnlineBanking.core.database.api.ClientAccountDAO;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientDTO;
-import lv.javaguru.java3OnlineBanking.core.services.clientAccounts.api.ClientAccountFactory;
+import lv.javaguru.java3OnlineBanking.core.services.clientaccounts.api.ClientAccountFactory;
 import lv.javaguru.java3OnlineBanking.core.services.clients.api.ClientService;
 import lv.javaguru.java3OnlineBanking.core.utils.GenerateAccount;
 import org.springframework.beans.factory.annotation.Autowired;

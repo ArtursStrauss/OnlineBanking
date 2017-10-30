@@ -1,8 +1,8 @@
-package lv.javaguru.java3OnlineBanking.core.commands.clientAccounts;
+package lv.javaguru.java3OnlineBanking.core.commands.clientaccounts;
 
 import lv.javaguru.java3OnlineBanking.core.commands.VoidResult;
 import lv.javaguru.java3OnlineBanking.core.services.DomainCommandHandler;
-import lv.javaguru.java3OnlineBanking.core.services.clientAccounts.api.ClientAccountService;
+import lv.javaguru.java3OnlineBanking.core.services.clientaccounts.api.ClientAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

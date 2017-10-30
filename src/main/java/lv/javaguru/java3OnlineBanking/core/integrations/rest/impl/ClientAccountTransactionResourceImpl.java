@@ -1,8 +1,8 @@
 package lv.javaguru.java3OnlineBanking.core.integrations.rest.impl;
 
 
-import lv.javaguru.java3OnlineBanking.core.commands.clientAccountTransactions.CreateClientAccountTransactionCommand;
-import lv.javaguru.java3OnlineBanking.core.commands.clientAccountTransactions.CreateClientAccountTransactionResult;
+import lv.javaguru.java3OnlineBanking.core.commands.clientaccounttransactions.CreateClientAccountTransactionCommand;
+import lv.javaguru.java3OnlineBanking.core.commands.clientaccounttransactions.CreateClientAccountTransactionResult;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.api.RESTResource;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientAccountTransactionDTO;
 import lv.javaguru.java3OnlineBanking.core.services.CommandExecutor;

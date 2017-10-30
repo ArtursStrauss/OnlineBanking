@@ -1,4 +1,4 @@
-package lv.javaguru.java3OnlineBanking.core.services.clientAccounts.api;
+package lv.javaguru.java3OnlineBanking.core.services.clientaccounts.api;
 
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;

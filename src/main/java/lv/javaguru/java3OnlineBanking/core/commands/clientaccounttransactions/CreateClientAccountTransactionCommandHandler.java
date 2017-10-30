@@ -1,8 +1,8 @@
-package lv.javaguru.java3OnlineBanking.core.commands.clientAccountTransactions;
+package lv.javaguru.java3OnlineBanking.core.commands.clientaccounttransactions;
 
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransaction;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientAccountTransactionDTO;
-import lv.javaguru.java3OnlineBanking.core.services.ClientAccountTransactions.api.ClientAccountTransactionFactory;
+import lv.javaguru.java3OnlineBanking.core.services.clientaccounttransactions.api.ClientAccountTransactionFactory;
 import lv.javaguru.java3OnlineBanking.core.services.DomainCommandHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

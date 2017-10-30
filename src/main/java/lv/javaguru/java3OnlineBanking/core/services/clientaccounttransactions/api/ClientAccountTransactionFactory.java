@@ -1,4 +1,4 @@
-package lv.javaguru.java3OnlineBanking.core.services.ClientAccountTransactions.api;
+package lv.javaguru.java3OnlineBanking.core.services.clientaccounttransactions.api;
 
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransaction;
 import lv.javaguru.java3OnlineBanking.core.domain.enums.TransactionStatus;

@@ -1,6 +1,6 @@
-package lv.javaguru.java3OnlineBanking.core.commands.clientAccountTransactions;
+package lv.javaguru.java3OnlineBanking.core.commands.clientaccounttransactions;
 
-import lv.javaguru.java3OnlineBanking.core.commands.clientAccounts.ClientAccountConverter;
+import lv.javaguru.java3OnlineBanking.core.commands.clientaccounts.ClientAccountConverter;
 import lv.javaguru.java3OnlineBanking.core.commands.clients.ClientConverter;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransaction;
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientAccountDTO;
