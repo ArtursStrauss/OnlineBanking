@@ -10,6 +10,7 @@ import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientAccountDT
 import lv.javaguru.java3OnlineBanking.core.integrations.rest.dto.ClientDTO;
 import lv.javaguru.java3OnlineBanking.core.services.clientaccounttransactions.api.ClientAccountTransactionFactory;
 import lv.javaguru.java3OnlineBanking.core.services.clientaccounts.api.ClientAccountService;
+import lv.javaguru.java3OnlineBanking.core.services.clientaccounttransactions.api.ClientAccountTransactionValidator;
 import lv.javaguru.java3OnlineBanking.core.services.clients.api.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -22,6 +23,8 @@ import static lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransactio
 public class ClientAccountTransactionFactoryImpl implements ClientAccountTransactionFactory {
 
     @Autowired
+    private ClientAccountTransactionValidator validator;
+    @Autowired
     private ClientAccountTransactionDAO clientAccountTransactionDAO;
     @Autowired
     private ClientService clientService;
@@ -30,6 +33,8 @@ public class ClientAccountTransactionFactoryImpl implements ClientAccountTransac
 
     @Override
     public ClientAccountTransaction create(ClientDTO clientDTO, ClientAccountDTO clientAccountDTO, TransactionType transactionType, BigDecimal amount, String currency, BigDecimal resultBalance, TransactionStatus status) {
+
+        validator.validate(transactionType, amount);
 
         Client client = clientService.get(clientDTO.getId());
         ClientAccount clientAccount = clientAccountService.get(clientAccountDTO.getId());

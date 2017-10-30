@@ -1,5 +1,6 @@
 package lv.javaguru.java3OnlineBanking.core.exceptions;
 
+import lv.javaguru.java3OnlineBanking.core.exceptions.clientaccounttransactions.AmountLessOrEqualsToZeroException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,15 @@ public class ExceptionHandlingController extends ResponseEntityExceptionHandler 
     public ResponseEntity<Object> resourceNotFound(ResourceNotFoundException exception) {
 
         ApiError error = new ApiError(NOT_FOUND);
+        error.setMessage(exception.getMessage());
+
+        return new ResponseEntity<>(error, error.getStatus());
+    }
+
+    @ExceptionHandler(AmountLessOrEqualsToZeroException.class)
+    public ResponseEntity<Object> amountLessOrEqualsToZero(AmountLessOrEqualsToZeroException exception) {
+
+        ApiError error = new ApiError(BAD_REQUEST);
         error.setMessage(exception.getMessage());
 
         return new ResponseEntity<>(error, error.getStatus());
