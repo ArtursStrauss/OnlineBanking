@@ -14,10 +14,10 @@ public class ClientAccountTransactionValidatorImpl implements ClientAccountTrans
     @Override
     public void validate(TransactionType transactionType, BigDecimal amount) {
 
-        amountNotZeroOrNegative(transactionType, amount);
+        amountNotZeroOrNegative(amount);
     }
 
-    private void amountNotZeroOrNegative(TransactionType transactionType, BigDecimal amount) {
+    private void amountNotZeroOrNegative(BigDecimal amount) {
 
         if (amount.compareTo(BigDecimal.ZERO) <= 0) {
             throw new AmountLessOrEqualsToZeroException("Amount should be greater than Zero! amount = " + amount.toString());
