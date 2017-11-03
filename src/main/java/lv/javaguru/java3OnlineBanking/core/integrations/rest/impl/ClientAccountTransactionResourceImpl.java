@@ -30,9 +30,7 @@ public class ClientAccountTransactionResourceImpl {
                 clientAccountTransactionDTO.getClientAccount(),
                 clientAccountTransactionDTO.getTransactionType(),
                 clientAccountTransactionDTO.getAmount(),
-                clientAccountTransactionDTO.getCurrency(),
-                clientAccountTransactionDTO.getResultBalance(),
-                clientAccountTransactionDTO.getStatus()
+                clientAccountTransactionDTO.getCurrency()
         );
 
         CreateClientAccountTransactionResult result = commandExecutor.execute(command);

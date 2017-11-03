@@ -26,10 +26,8 @@ public class ClientAccountTransactionDTO implements Serializable {
     @NotNull
     private String currency;
 
-    @NotNull
     private BigDecimal resultBalance;
 
-    @NotNull
     private TransactionStatus status;
 
     public Long getId() {

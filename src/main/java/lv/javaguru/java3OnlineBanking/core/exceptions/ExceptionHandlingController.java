@@ -1,5 +1,6 @@
 package lv.javaguru.java3OnlineBanking.core.exceptions;
 
+import lv.javaguru.java3OnlineBanking.core.exceptions.clientaccounttransactions.AccountBalanceHasNotEnoughResources;
 import lv.javaguru.java3OnlineBanking.core.exceptions.clientaccounttransactions.AmountLessOrEqualsToZeroException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -22,7 +23,9 @@ public class ExceptionHandlingController extends ResponseEntityExceptionHandler 
 
         String errorMessage = "Malformed JSON request";
         ApiError error = new ApiError(BAD_REQUEST, errorMessage, ex);
-        return new ResponseEntity<>(error, error.getStatus());
+        return ResponseEntity
+                .status(error.getStatus())
+                .body(error);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -31,7 +34,9 @@ public class ExceptionHandlingController extends ResponseEntityExceptionHandler 
         ApiError error = new ApiError(NOT_FOUND);
         error.setMessage(exception.getMessage());
 
-        return new ResponseEntity<>(error, error.getStatus());
+        return ResponseEntity
+                .status(error.getStatus())
+                .body(error);
     }
 
     @ExceptionHandler(AmountLessOrEqualsToZeroException.class)
@@ -40,7 +45,20 @@ public class ExceptionHandlingController extends ResponseEntityExceptionHandler 
         ApiError error = new ApiError(BAD_REQUEST);
         error.setMessage(exception.getMessage());
 
-        return new ResponseEntity<>(error, error.getStatus());
+        return ResponseEntity
+                .status(error.getStatus())
+                .body(error);
+    }
+
+    @ExceptionHandler(AccountBalanceHasNotEnoughResources.class)
+    public ResponseEntity<Object> amountLessOrEqualsToZero(AccountBalanceHasNotEnoughResources exception) {
+
+        ApiError error = new ApiError(BAD_REQUEST);
+        error.setMessage(exception.getMessage());
+
+        return ResponseEntity
+                .status(error.getStatus())
+                .body(error);
     }
 
     @Override
@@ -56,6 +74,8 @@ public class ExceptionHandlingController extends ResponseEntityExceptionHandler 
         error.addValidationErrors(ex.getBindingResult().getFieldErrors());
         error.addValidationError(ex.getBindingResult().getGlobalErrors());
 
-        return new ResponseEntity<>(error, error.getStatus());
+        return ResponseEntity
+                .status(error.getStatus())
+                .body(error);
     }
 }

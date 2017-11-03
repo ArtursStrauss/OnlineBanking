@@ -1,14 +1,12 @@
 package lv.javaguru.java3OnlineBanking.core.services.clientaccounts.impl;
 
 import lv.javaguru.java3OnlineBanking.core.database.api.ClientAccountDAO;
-import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.core.exceptions.ResourceNotFoundException;
 import lv.javaguru.java3OnlineBanking.core.services.clientaccounts.api.ClientAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Component
@@ -18,14 +16,7 @@ public class ClientAccountServiceImpl implements ClientAccountService {
     private ClientAccountDAO clientAccountDAO;
 
     @Override
-    public ClientAccount update(Long clientAccountId, String accountNumber, String currency, BigDecimal balance, Client client) {
-
-        ClientAccount clientAccount = new ClientAccount();
-        clientAccount.setId(clientAccountId);
-        clientAccount.setAccountNumber(accountNumber);
-        clientAccount.setCurrency(currency);
-        clientAccount.setBalance(balance);
-        clientAccount.setClient(client);
+    public ClientAccount update(ClientAccount clientAccount) {
 
         clientAccountDAO.update(clientAccount);
         return clientAccount;

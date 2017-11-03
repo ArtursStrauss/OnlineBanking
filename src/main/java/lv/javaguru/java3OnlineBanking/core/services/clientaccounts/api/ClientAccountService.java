@@ -1,18 +1,12 @@
 package lv.javaguru.java3OnlineBanking.core.services.clientaccounts.api;
 
-import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 public interface ClientAccountService {
 
-    ClientAccount update(Long clientAccountId,
-                         String accountNumber,
-                         String currency,
-                         BigDecimal balance,
-                         Client client);
+    ClientAccount update(ClientAccount clientAccount);
 
     void delete(Long clientAccountId);
 

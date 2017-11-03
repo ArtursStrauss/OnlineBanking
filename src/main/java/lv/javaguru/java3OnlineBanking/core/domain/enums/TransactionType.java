@@ -3,7 +3,8 @@ package lv.javaguru.java3OnlineBanking.core.domain.enums;
 public enum TransactionType {
     DEPOSIT,
     WITHDRAW,
-    TRANSFER,
+    TRANSFER_IN,
+    TRANSFER_OUT,
     CORRECTION;
 
     public static boolean contains(String value){

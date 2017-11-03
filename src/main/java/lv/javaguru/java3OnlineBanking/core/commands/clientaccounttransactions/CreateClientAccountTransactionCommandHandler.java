@@ -23,9 +23,7 @@ public class CreateClientAccountTransactionCommandHandler implements DomainComma
                 command.getClientAccountDTO(),
                 command.getTransactionType(),
                 command.getAmount(),
-                command.getCurrency(),
-                command.getResultBalance(),
-                command.getStatus()
+                command.getCurrency()
         );
 
         ClientAccountTransactionDTO clientAccountTransactionDTO = clientAccountTransactionConverter.convert(clientAccountTransaction);
