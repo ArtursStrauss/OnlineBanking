@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-import static lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransactionBuilder.createClientAccountTransaction;
+import static lv.javaguru.java3OnlineBanking.core.domain.builders.ClientAccountTransactionBuilder.createClientAccountTransaction;
 
 @Component
 public class ClientAccountTransactionFactoryImpl implements ClientAccountTransactionFactory {

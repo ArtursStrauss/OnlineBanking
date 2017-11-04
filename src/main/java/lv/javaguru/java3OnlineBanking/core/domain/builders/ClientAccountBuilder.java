@@ -1,4 +1,7 @@
-package lv.javaguru.java3OnlineBanking.core.domain;
+package lv.javaguru.java3OnlineBanking.core.domain.builders;
+
+import lv.javaguru.java3OnlineBanking.core.domain.Client;
+import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 
 import java.math.BigDecimal;
 

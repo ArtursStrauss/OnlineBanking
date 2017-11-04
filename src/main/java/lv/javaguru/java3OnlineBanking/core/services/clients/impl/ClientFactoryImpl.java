@@ -7,7 +7,7 @@ import lv.javaguru.java3OnlineBanking.core.services.clients.api.ClientValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static lv.javaguru.java3OnlineBanking.core.domain.ClientBuilder.createClient;
+import static lv.javaguru.java3OnlineBanking.core.domain.builders.ClientBuilder.createClient;
 
 @Component
 public class ClientFactoryImpl implements ClientFactory {

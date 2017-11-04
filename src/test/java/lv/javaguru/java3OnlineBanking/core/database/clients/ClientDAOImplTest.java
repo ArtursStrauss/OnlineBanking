@@ -2,11 +2,10 @@ package lv.javaguru.java3OnlineBanking.core.database.clients;
 
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import org.junit.Test;
-import org.springframework.cache.support.NullValue;
 
 import javax.transaction.Transactional;
 
-import static lv.javaguru.java3OnlineBanking.core.domain.ClientBuilder.createClient;
+import static lv.javaguru.java3OnlineBanking.core.domain.builders.ClientBuilder.createClient;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
