@@ -10,7 +10,7 @@ import lv.javaguru.java3OnlineBanking.core.utils.GenerateAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static lv.javaguru.java3OnlineBanking.core.domain.ClientAccountBuilder.createClientAccount;
+import static lv.javaguru.java3OnlineBanking.core.domain.builders.ClientAccountBuilder.createClientAccount;
 
 import java.math.BigDecimal;
 

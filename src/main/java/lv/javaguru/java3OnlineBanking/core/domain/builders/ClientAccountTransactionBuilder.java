@@ -1,5 +1,8 @@
-package lv.javaguru.java3OnlineBanking.core.domain;
+package lv.javaguru.java3OnlineBanking.core.domain.builders;
 
+import lv.javaguru.java3OnlineBanking.core.domain.Client;
+import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
+import lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransaction;
 import lv.javaguru.java3OnlineBanking.core.domain.enums.TransactionStatus;
 import lv.javaguru.java3OnlineBanking.core.domain.enums.TransactionType;
 
