@@ -1,0 +1,22 @@
+ext {
+    versions = [
+            mySqlVersion     : "5.1.39",
+            liquibaseVersion : "3.5.3",
+            guavaVersion     : "18.0",
+            springVersion    : "1.5.7.RELEASE",
+            apacheTextVersion: "1.1",
+            jacksonJsrVersion: "2.8.10",
+    ]
+
+    libs = [
+            springBootStarterDataJpa: "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springVersion",
+            springBootStarterWeb    : "org.springframework.boot:spring-boot-starter-web:$versions.springVersion",
+            springBootStarterTest   : "org.springframework.boot:spring-boot-starter-test:$versions.springVersion",
+
+            mySql                   : "mysql:mysql-connector-java:$versions.mySqlVersion",
+            liquibase               : "org.liquibase:liquibase-core:$versions.liquibaseVersion",
+            guava                   : "com.google.guava:guava:$versions.guavaVersion",
+            apacheText              : "org.apache.commons:commons-text:$versions.apacheTextVersion",
+            jacksonJsr              : "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$versions.jacksonJsrVersion",
+    ]
+}

@@ -1,0 +1,19 @@
+apply from: "${rootDir}/gradle/java.gradle"
+
+project(":core") {
+    dependencies {
+        compile project(":core-api")
+
+        compile libs.mySql
+        compile libs.liquibase
+        compile libs.guava
+        compile libs.apacheText
+        compile libs.jacksonJsr
+
+        compile libs.springBootStarterDataJpa
+        compile libs.springBootStarterWeb
+        compile(libs.springBootStarterTest) {
+            exclude(module: 'commons-logging')
+        }
+    }
+}
