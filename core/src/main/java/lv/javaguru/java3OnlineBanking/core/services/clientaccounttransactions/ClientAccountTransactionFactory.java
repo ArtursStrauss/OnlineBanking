@@ -1,6 +1,5 @@
 package lv.javaguru.java3OnlineBanking.core.services.clientaccounttransactions;
 
-import lv.javaguru.java3OnlineBanking.core.database.api.ClientAccountTransactionDAO;
 import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionStatus;
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountDTO;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
@@ -8,6 +7,7 @@ import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransaction;
 import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionType;
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
+import lv.javaguru.java3OnlineBanking.core.domain.repositories.ClientAccountTransactionRepository;
 import lv.javaguru.java3OnlineBanking.core.services.clientaccounts.ClientAccountService;
 import lv.javaguru.java3OnlineBanking.core.services.clients.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ class ClientAccountTransactionFactoryImpl implements ClientAccountTransactionFac
     @Autowired
     private ClientAccountTransactionValidator validator;
     @Autowired
-    private ClientAccountTransactionDAO clientAccountTransactionDAO;
+    private ClientAccountTransactionRepository clientAccountTransactionRepository;
     @Autowired
     private ClientService clientService;
     @Autowired
@@ -56,7 +56,7 @@ class ClientAccountTransactionFactoryImpl implements ClientAccountTransactionFac
                 .withStatus(status)
                 .build();
 
-        clientAccountTransactionDAO.create(clientAccountTransaction);
+        clientAccountTransactionRepository.save(clientAccountTransaction);
 
         return clientAccountTransaction;
     }

@@ -1,6 +1,5 @@
 apply from: "${rootDir}/gradle/java.gradle"
 
-//apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
 apply plugin: "org.springframework.boot"
 
 project(":application") {

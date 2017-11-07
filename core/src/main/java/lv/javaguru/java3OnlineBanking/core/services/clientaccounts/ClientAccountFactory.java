@@ -2,9 +2,9 @@ package lv.javaguru.java3OnlineBanking.core.services.clientaccounts;
 
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.core.domain.builders.ClientAccountBuilder;
-import lv.javaguru.java3OnlineBanking.core.database.api.ClientAccountDAO;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
+import lv.javaguru.java3OnlineBanking.core.domain.repositories.ClientAccountRepository;
 import lv.javaguru.java3OnlineBanking.core.services.clients.ClientService;
 import lv.javaguru.java3OnlineBanking.core.utils.GenerateAccount;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ class ClientAccountFactoryImpl implements ClientAccountFactory {
     @Autowired
     private GenerateAccount generateAccount;
     @Autowired
-    private ClientAccountDAO clientAccountDAO;
+    private ClientAccountRepository clientAccountRepository;
     @Autowired
     private ClientService clientService;
 
@@ -41,7 +41,7 @@ class ClientAccountFactoryImpl implements ClientAccountFactory {
                 .withClient(client)
                 .build();
 
-        clientAccountDAO.create(clientAccount);
+        clientAccountRepository.save(clientAccount);
 
         return clientAccount;
     }

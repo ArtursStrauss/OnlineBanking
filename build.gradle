@@ -9,7 +9,6 @@ buildscript {
     }
 }
 
-//apply from: "${rootDir}/gradle/java.gradle"
 apply from: "${rootDir}/gradle/dependencies.gradle"
 
 repositories {
@@ -17,7 +16,6 @@ repositories {
     maven { url "http://mvnrepository.com" }
     maven { url "http://repo.spring.io/snapshot" }
     maven { url "http://repo.spring.io/milestone" }
-    // maven { url "http://repo.maven.apache.org/maven2" }
 }
 
 allprojects {

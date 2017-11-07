@@ -1,8 +1,8 @@
 package lv.javaguru.java3OnlineBanking.core.services.clientaccounts;
 
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
+import lv.javaguru.java3OnlineBanking.core.domain.repositories.ClientAccountRepository;
 import lv.javaguru.java3OnlineBanking.core.exceptions.ResourceNotFoundException;
-import lv.javaguru.java3OnlineBanking.core.database.api.ClientAccountDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,24 +23,24 @@ public interface ClientAccountService {
 class ClientAccountServiceImpl implements ClientAccountService {
 
     @Autowired
-    private ClientAccountDAO clientAccountDAO;
+    private ClientAccountRepository clientAccountRepository;
 
     @Override
     public ClientAccount update(ClientAccount clientAccount) {
 
-        clientAccountDAO.update(clientAccount);
+        clientAccountRepository.save(clientAccount);
         return clientAccount;
     }
 
     @Override
     public void delete(Long clientAccountId) {
         ClientAccount clientAccount = get(clientAccountId);
-        clientAccountDAO.delete(clientAccount);
+        clientAccountRepository.delete(clientAccount);
     }
 
     @Override
     public ClientAccount get(Long clientAccountId) {
-        ClientAccount clientAccount = clientAccountDAO.getRequired(clientAccountId);
+        ClientAccount clientAccount = clientAccountRepository.findOne(clientAccountId);
 
         if (clientAccount == null) {
             throw new ResourceNotFoundException(clientAccountId, "Client Account not found!");
@@ -49,6 +49,6 @@ class ClientAccountServiceImpl implements ClientAccountService {
     }
 
     public List<ClientAccount> getAllAccountsByClientId(Long clientId) {
-        return clientAccountDAO.getAllAccountsByClientId(clientId);
+        return clientAccountRepository.findAllByClientId(clientId);
     }
 }

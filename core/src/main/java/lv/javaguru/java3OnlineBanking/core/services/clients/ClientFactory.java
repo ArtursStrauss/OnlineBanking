@@ -1,7 +1,7 @@
 package lv.javaguru.java3OnlineBanking.core.services.clients;
 
-import lv.javaguru.java3OnlineBanking.core.database.api.ClientDAO;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
+import lv.javaguru.java3OnlineBanking.core.domain.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +18,7 @@ class ClientFactoryImpl implements ClientFactory {
     @Autowired
     private ClientValidator clientValidator;
     @Autowired
-    private ClientDAO clientDAO;
+    private ClientRepository clientRepository;
 
     @Override
     public Client create(String login, String password, String fullName) {
@@ -28,7 +28,7 @@ class ClientFactoryImpl implements ClientFactory {
                 .withPassword(password)
                 .withFullName(fullName)
                 .build();
-        clientDAO.create(client);
+        clientRepository.save(client);
         return client;
     }
 }

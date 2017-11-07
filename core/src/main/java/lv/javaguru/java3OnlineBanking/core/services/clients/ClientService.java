@@ -1,7 +1,7 @@
 package lv.javaguru.java3OnlineBanking.core.services.clients;
 
-import lv.javaguru.java3OnlineBanking.core.database.api.ClientDAO;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
+import lv.javaguru.java3OnlineBanking.core.domain.repositories.ClientRepository;
 import lv.javaguru.java3OnlineBanking.core.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,7 +23,7 @@ public interface ClientService {
 class ClientServiceImpl implements ClientService {
 
     @Autowired
-    private ClientDAO clientDAO;
+    private ClientRepository clientRepository;
     @Autowired
     private ClientValidator clientValidator;
 
@@ -37,19 +37,19 @@ class ClientServiceImpl implements ClientService {
         client.setPassword(newPassword);
         client.setFullName(newFullName);
 
-        clientDAO.update(client);
+        clientRepository.save(client);
         return client;
     }
 
     @Override
     public void delete(Long clientId) {
         Client client = get(clientId);
-        clientDAO.delete(client);
+        clientRepository.delete(client);
     }
 
     @Override
     public Client get(Long clientId) {
-        Client client = clientDAO.getRequired(clientId);
+        Client client = clientRepository.findOne(clientId);
 
         if (client == null) {
             throw new ResourceNotFoundException(clientId, "user not found");
