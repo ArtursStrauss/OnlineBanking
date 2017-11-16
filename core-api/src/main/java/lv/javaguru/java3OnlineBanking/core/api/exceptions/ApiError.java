@@ -1,7 +1,7 @@
-package lv.javaguru.java3OnlineBanking.core.exceptions;
+package lv.javaguru.java3OnlineBanking.core.api.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lv.javaguru.java3OnlineBanking.core.exceptions.api.ApiSubError;
+import lv.javaguru.java3OnlineBanking.core.api.exceptions.api.ApiSubError;
 import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;

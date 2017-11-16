@@ -1,4 +1,4 @@
-package lv.javaguru.java3OnlineBanking.core.exceptions;
+package lv.javaguru.java3OnlineBanking.core.api.exceptions;
 
 import org.springframework.http.HttpStatus;
 

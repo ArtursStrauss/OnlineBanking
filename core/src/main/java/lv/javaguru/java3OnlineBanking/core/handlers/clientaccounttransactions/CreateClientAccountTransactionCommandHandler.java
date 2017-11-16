@@ -1,9 +1,9 @@
 package lv.javaguru.java3OnlineBanking.core.handlers.clientaccounttransactions;
 
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountTransactionDTO;
 import lv.javaguru.java3OnlineBanking.core.api.clientaccounttransactions.CreateClientAccountTransactionCommand;
 import lv.javaguru.java3OnlineBanking.core.api.clientaccounttransactions.CreateClientAccountTransactionResult;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransaction;
-import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountTransactionDTO;
 import lv.javaguru.java3OnlineBanking.core.handlers.DomainCommandHandler;
 import lv.javaguru.java3OnlineBanking.core.services.clientaccounttransactions.ClientAccountTransactionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

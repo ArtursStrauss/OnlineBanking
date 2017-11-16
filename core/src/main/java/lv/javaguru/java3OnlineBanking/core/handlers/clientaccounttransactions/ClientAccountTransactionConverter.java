@@ -1,10 +1,10 @@
 package lv.javaguru.java3OnlineBanking.core.handlers.clientaccounttransactions;
 
-import lv.javaguru.java3OnlineBanking.core.handlers.clientaccounts.ClientAccountConverter;
-import lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransaction;
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountDTO;
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountTransactionDTO;
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
+import lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransaction;
+import lv.javaguru.java3OnlineBanking.core.handlers.clientaccounts.ClientAccountConverter;
 import lv.javaguru.java3OnlineBanking.core.handlers.clients.ClientConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

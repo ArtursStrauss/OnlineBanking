@@ -1,9 +1,9 @@
 package lv.javaguru.java3OnlineBanking.core.services.clientaccounttransactions;
 
-import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionType;
-import lv.javaguru.java3OnlineBanking.core.exceptions.clientaccounttransactions.AccountBalanceHasNotEnoughResources;
-import lv.javaguru.java3OnlineBanking.core.exceptions.clientaccounttransactions.AmountLessOrEqualsToZeroException;
+import lv.javaguru.java3OnlineBanking.core.api.exceptions.clientaccounttransactions.AccountBalanceHasNotEnoughResources;
+import lv.javaguru.java3OnlineBanking.core.api.exceptions.clientaccounttransactions.AmountLessOrEqualsToZeroException;
+import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;

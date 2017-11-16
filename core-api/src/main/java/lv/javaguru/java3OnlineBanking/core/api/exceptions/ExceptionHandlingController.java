@@ -1,7 +1,7 @@
-package lv.javaguru.java3OnlineBanking.core.exceptions;
+package lv.javaguru.java3OnlineBanking.core.api.exceptions;
 
-import lv.javaguru.java3OnlineBanking.core.exceptions.clientaccounttransactions.AmountLessOrEqualsToZeroException;
-import lv.javaguru.java3OnlineBanking.core.exceptions.clientaccounttransactions.AccountBalanceHasNotEnoughResources;
+import lv.javaguru.java3OnlineBanking.core.api.exceptions.clientaccounttransactions.AccountBalanceHasNotEnoughResources;
+import lv.javaguru.java3OnlineBanking.core.api.exceptions.clientaccounttransactions.AmountLessOrEqualsToZeroException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

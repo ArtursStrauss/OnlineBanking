@@ -4,16 +4,16 @@ project(":core") {
     dependencies {
         compile project(":core-api")
 
+        compile libs.springBootStarterDataJpa
+        compile libs.springBootStarterWeb
+        compile(libs.springBootStarterTest) {
+            exclude(group: 'commons-logging', module: 'commons-logging')
+        }
+
         compile libs.mySql
         compile libs.liquibase
         compile libs.guava
         compile libs.apacheText
         compile libs.jacksonJsr
-
-        compile libs.springBootStarterDataJpa
-        compile libs.springBootStarterWeb
-        compile(libs.springBootStarterTest) {
-            exclude(module: 'commons-logging')
-        }
     }
 }

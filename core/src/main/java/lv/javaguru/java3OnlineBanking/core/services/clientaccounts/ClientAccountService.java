@@ -1,8 +1,8 @@
 package lv.javaguru.java3OnlineBanking.core.services.clientaccounts;
 
+import lv.javaguru.java3OnlineBanking.core.api.exceptions.ResourceNotFoundException;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.core.domain.repositories.ClientAccountRepository;
-import lv.javaguru.java3OnlineBanking.core.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

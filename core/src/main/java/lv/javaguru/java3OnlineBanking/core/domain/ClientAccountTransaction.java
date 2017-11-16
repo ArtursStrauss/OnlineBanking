@@ -1,7 +1,7 @@
 package lv.javaguru.java3OnlineBanking.core.domain;
 
-import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionType;
 import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionStatus;
+import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionType;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

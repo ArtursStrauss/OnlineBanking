@@ -1,6 +1,6 @@
-package lv.javaguru.java3OnlineBanking.core.exceptions;
+package lv.javaguru.java3OnlineBanking.core.api.exceptions;
 
-import lv.javaguru.java3OnlineBanking.core.exceptions.api.ApiSubError;
+import lv.javaguru.java3OnlineBanking.core.api.exceptions.api.ApiSubError;
 
 class ApiValidationError implements ApiSubError {
     private String object;

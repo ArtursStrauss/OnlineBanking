@@ -1,4 +1,4 @@
-package lv.javaguru.java3OnlineBanking.core.exceptions.clientaccounttransactions;
+package lv.javaguru.java3OnlineBanking.core.api.exceptions.clientaccounttransactions;
 
 
 public class AmountLessOrEqualsToZeroException extends RuntimeException{

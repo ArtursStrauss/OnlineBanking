@@ -1,9 +1,9 @@
 package lv.javaguru.java3OnlineBanking.core.handlers.clients;
 
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
 import lv.javaguru.java3OnlineBanking.core.api.clients.UpdateClientCommand;
 import lv.javaguru.java3OnlineBanking.core.api.clients.UpdateClientResult;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
-import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
 import lv.javaguru.java3OnlineBanking.core.handlers.DomainCommandHandler;
 import lv.javaguru.java3OnlineBanking.core.services.clients.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;

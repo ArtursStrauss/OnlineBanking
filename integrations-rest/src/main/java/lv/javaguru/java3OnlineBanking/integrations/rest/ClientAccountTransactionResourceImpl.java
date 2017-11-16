@@ -1,10 +1,10 @@
 package lv.javaguru.java3OnlineBanking.integrations.rest;
 
 
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountTransactionDTO;
 import lv.javaguru.java3OnlineBanking.core.api.CommandExecutor;
 import lv.javaguru.java3OnlineBanking.core.api.clientaccounttransactions.CreateClientAccountTransactionCommand;
 import lv.javaguru.java3OnlineBanking.core.api.clientaccounttransactions.CreateClientAccountTransactionResult;
-import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountTransactionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;

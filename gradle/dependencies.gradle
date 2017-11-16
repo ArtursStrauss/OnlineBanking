@@ -1,11 +1,13 @@
 ext {
     versions = [
-            mySqlVersion     : "5.1.39",
-            liquibaseVersion : "3.5.3",
-            guavaVersion     : "18.0",
-            springVersion    : "1.5.7.RELEASE",
-            apacheTextVersion: "1.1",
-            jacksonJsrVersion: "2.8.10",
+            //mySqlVersion     : "5.1.39",
+            mySqlVersion      : "5.1.44",
+            liquibaseVersion  : "3.5.3",
+            guavaVersion      : "18.0",
+            springVersion     : "1.5.7.RELEASE",
+            apacheTextVersion : "1.1",
+            jacksonJsrVersion : "2.8.10",
+            jbossVersion      : "3.3.0.Final"
     ]
 
     libs = [
@@ -18,5 +20,6 @@ ext {
             guava                   : "com.google.guava:guava:$versions.guavaVersion",
             apacheText              : "org.apache.commons:commons-text:$versions.apacheTextVersion",
             jacksonJsr              : "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$versions.jacksonJsrVersion",
+            jboss                   : "org.jboss.logging:jboss-logging:$versions.jbossVersion"
     ]
 }

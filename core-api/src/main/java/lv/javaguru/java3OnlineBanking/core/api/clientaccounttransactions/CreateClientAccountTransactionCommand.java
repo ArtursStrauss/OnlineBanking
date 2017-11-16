@@ -1,13 +1,13 @@
 package lv.javaguru.java3OnlineBanking.core.api.clientaccounttransactions;
 
-import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionType;
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountDTO;
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
+import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionType;
 import lv.javaguru.java3OnlineBanking.core.api.DomainCommand;
 
 import java.math.BigDecimal;
 
-public class CreateClientAccountTransactionCommand implements DomainCommand<CreateClientAccountTransactionResult>{
+public class CreateClientAccountTransactionCommand implements DomainCommand<CreateClientAccountTransactionResult> {
 
     private ClientDTO clientDTO;
     private ClientAccountDTO clientAccountDTO;

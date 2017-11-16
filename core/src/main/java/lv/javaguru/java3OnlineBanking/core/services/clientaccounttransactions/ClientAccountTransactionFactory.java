@@ -1,12 +1,12 @@
 package lv.javaguru.java3OnlineBanking.core.services.clientaccounttransactions;
 
-import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionStatus;
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountDTO;
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
+import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionStatus;
+import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionType;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccountTransaction;
-import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionType;
-import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
 import lv.javaguru.java3OnlineBanking.core.domain.repositories.ClientAccountTransactionRepository;
 import lv.javaguru.java3OnlineBanking.core.services.clientaccounts.ClientAccountService;
 import lv.javaguru.java3OnlineBanking.core.services.clients.ClientService;

@@ -1,9 +1,9 @@
 package lv.javaguru.java3OnlineBanking.core.services.clientaccounts;
 
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
+import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.core.domain.builders.ClientAccountBuilder;
-import lv.javaguru.java3OnlineBanking.core.domain.Client;
-import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
 import lv.javaguru.java3OnlineBanking.core.domain.repositories.ClientAccountRepository;
 import lv.javaguru.java3OnlineBanking.core.services.clients.ClientService;
 import lv.javaguru.java3OnlineBanking.core.utils.GenerateAccount;
