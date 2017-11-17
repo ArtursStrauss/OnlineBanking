@@ -1,4 +1,6 @@
-package lv.javaguru.java3OnlineBanking.common.dtos;
+package lv.javaguru.java3OnlineBanking.common.dtos.builders;
+
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
 
 public class ClientDTOBuilder {
 

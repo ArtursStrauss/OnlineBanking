@@ -1,6 +1,6 @@
 package lv.javaguru.java3OnlineBanking.core.api.exceptions;
 
-public class ResourceNotFoundException extends RuntimeException {
+public class ResourceNotFoundException extends ApplicationException {
 
     private Long resourceId;
 

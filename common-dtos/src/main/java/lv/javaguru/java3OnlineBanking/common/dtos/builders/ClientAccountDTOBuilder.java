@@ -1,4 +1,7 @@
-package lv.javaguru.java3OnlineBanking.common.dtos;
+package lv.javaguru.java3OnlineBanking.common.dtos.builders;
+
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountDTO;
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
 
 import java.math.BigDecimal;
 

@@ -4,7 +4,7 @@ import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
 import lv.javaguru.java3OnlineBanking.core.domain.Client;
 import org.springframework.stereotype.Component;
 
-import static lv.javaguru.java3OnlineBanking.common.dtos.ClientDTOBuilder.createClientDTO;
+import static lv.javaguru.java3OnlineBanking.common.dtos.builders.ClientDTOBuilder.createClientDTO;
 
 @Component
 public class ClientConverter {

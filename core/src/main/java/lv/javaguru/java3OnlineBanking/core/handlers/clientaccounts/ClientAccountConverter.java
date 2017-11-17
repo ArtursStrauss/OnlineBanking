@@ -2,7 +2,7 @@ package lv.javaguru.java3OnlineBanking.core.handlers.clientaccounts;
 
 
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountDTO;
-import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountDTOBuilder;
+import lv.javaguru.java3OnlineBanking.common.dtos.builders.ClientAccountDTOBuilder;
 import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
 import lv.javaguru.java3OnlineBanking.core.domain.ClientAccount;
 import lv.javaguru.java3OnlineBanking.core.handlers.clients.ClientConverter;

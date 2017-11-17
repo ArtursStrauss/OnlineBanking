@@ -1,9 +1,11 @@
 package lv.javaguru.java3OnlineBanking.core.api.exceptions.clientaccounttransactions;
 
 
-public class AmountLessOrEqualsToZeroException extends RuntimeException{
+import lv.javaguru.java3OnlineBanking.core.api.exceptions.ApplicationException;
 
-    public AmountLessOrEqualsToZeroException(String message){
+public class AmountLessOrEqualsToZeroException extends ApplicationException {
+
+    public AmountLessOrEqualsToZeroException(String message) {
         super(message);
     }
 }

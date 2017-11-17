@@ -26,10 +26,7 @@ allprojects {
         mavenCentral()
         jcenter()
     }
-
 }
-
-apply plugin: "idea"
 
 idea {
     project {

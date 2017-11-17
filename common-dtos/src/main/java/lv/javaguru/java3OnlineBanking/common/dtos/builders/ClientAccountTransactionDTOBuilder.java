@@ -1,5 +1,8 @@
-package lv.javaguru.java3OnlineBanking.common.dtos;
+package lv.javaguru.java3OnlineBanking.common.dtos.builders;
 
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountDTO;
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientAccountTransactionDTO;
+import lv.javaguru.java3OnlineBanking.common.dtos.ClientDTO;
 import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionStatus;
 import lv.javaguru.java3OnlineBanking.common.dtos.enums.TransactionType;
 

@@ -1,19 +1,24 @@
-package lv.javaguru.java3OnlineBanking.core.api.exceptions;
+package lv.javaguru.java3OnlineBanking.common.dtos;
 
-import lv.javaguru.java3OnlineBanking.core.api.exceptions.api.ApiSubError;
+import lv.javaguru.java3OnlineBanking.common.dtos.api.ApplicationValidationError;
 
-class ApiValidationError implements ApiSubError {
+public class ApplicationValidationErrorDTO implements ApplicationValidationError {
+
     private String object;
     private String field;
     private Object rejectedValue;
     private String message;
 
-    ApiValidationError(String object, String message) {
+    public ApplicationValidationErrorDTO() {
+
+    }
+
+    ApplicationValidationErrorDTO(String object, String message) {
         this.object = object;
         this.message = message;
     }
 
-    ApiValidationError(String object, String field, Object rejectedValue, String message) {
+    ApplicationValidationErrorDTO(String object, String field, Object rejectedValue, String message) {
         this.object = object;
         this.field = field;
         this.rejectedValue = rejectedValue;
@@ -54,7 +59,7 @@ class ApiValidationError implements ApiSubError {
 
     @Override
     public String toString() {
-        return "ApiValidationError{" +
+        return "ApplicationValidationErrorDTO{" +
                 "object='" + object + '\'' +
                 ", field='" + field + '\'' +
                 ", rejectedValue=" + rejectedValue +

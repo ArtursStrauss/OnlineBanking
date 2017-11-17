@@ -1,6 +1,8 @@
 package lv.javaguru.java3OnlineBanking.core.api.exceptions.clientaccounttransactions;
 
-public class AccountBalanceHasNotEnoughResources extends RuntimeException {
+import lv.javaguru.java3OnlineBanking.core.api.exceptions.ApplicationException;
+
+public class AccountBalanceHasNotEnoughResources extends ApplicationException {
     public AccountBalanceHasNotEnoughResources(String message) {
         super(message);
     }
