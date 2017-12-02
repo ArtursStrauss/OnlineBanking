@@ -1,9 +1,0 @@
-apply from: "${rootDir}/gradle/java.gradle"
-
-project(":integrations-rest") {
-    dependencies {
-        compile project(":core-api")
-
-        compile libs.springBootStarterTest
-    }
-}

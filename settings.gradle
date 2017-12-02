@@ -1,8 +1,9 @@
 rootProject.name = 'java3OnlineBanking'
 
-include 'application'
-include 'core'
+include 'core-app'
 include 'common-dtos'
 include 'core-api'
 include 'integrations-rest'
+include 'public-api'
+include 'public-app'
 
